@@ -1,4 +1,4 @@
-Montage Kitchen Sink
+Logic Montage
 ===============
 
 This application depends on the Montage framework which isn't included in the repository. There are two easy ways to
