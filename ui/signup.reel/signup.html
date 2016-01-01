@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="signup.css">
+	<script src=""></script>
+    <script type="text/montage-serialization">
+    {
+        "owner": {
+            "properties": {
+                "element": {"#": "owner"}
+		
+            }
+        },
+		"button": {
+            "prototype": "montage/ui/button.reel",
+            "properties": {
+                "element": {"#": "button"},
+				"itemLinkElement": {"#": "button"},
+                "enabled": true,
+                "label": "Sign Up"
+            }
+        },
+        "txtFirstName": {
+            "prototype": "montage/ui/input-text.reel",
+            "properties": {
+                "element": {"#": "txtFirstName"},
+                "placeholder":"First Name"
+            }
+        },
+        "txtLastName": {
+            "prototype": "montage/ui/input-text.reel",
+            "properties": {
+                "element": {"#": "txtLastName"},
+                "placeholder":"Last Name"
+            }
+        },
+        "txtEmailId": {
+            "prototype": "montage/ui/input-text.reel",
+            "properties": {
+                "element": {"#": "txtEmailId"},
+                "placeholder":"Email ID"
+            }
+        },
+        "txtDOB": {
+            "prototype": "montage/ui/input-text.reel",
+            "properties": {
+                "element": {"#": "txtDOB"},
+                "placeholder":"Date Of Birth(DD/MM/YYYY)"
+            }
+        },
+        "txtCompanyName": {
+            "prototype": "montage/ui/input-text.reel",
+            "properties": {
+                "element": {"#": "txtCompanyName"},
+                "placeholder":"Company Name"
+            }
+        },
+        "txtPhoneNumber": {
+            "prototype": "montage/ui/input-text.reel",
+            "properties": {
+                "element": {"#": "txtPhoneNumber"},
+                "placeholder":"Phone Number"
+            }
+        },
+        "txtPassword": {
+            "prototype": "montage/ui/input-text.reel",
+            "properties": {
+                "element": {"#": "txtPassword"},
+                "placeholder":"Password"
+            }
+        },
+        "txtConfirmPassword": {
+            "prototype": "montage/ui/input-text.reel",
+            "properties": {
+                "element": {"#": "txtConfirmPassword"},
+                "placeholder":"Confirm Password"
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <div data-montage-id="owner" class="Signup">
+	<div class="outer" >
+		<div class="innerDiv">
+		<div class="form-module">
+		<div class="formContainer">
+		<h2>Create to your account</h2>
+		<form>
+       <!--  <input type="text" placeholder="First Name"> -->
+	    <input data-montage-id="txtFirstName" type="text">
+       <input data-montage-id="txtLastName" type="text">
+        <input data-montage-id="txtEmailId" type="text">
+        <input data-montage-id="txtDOB" type="text">
+        <input data-montage-id="txtCompanyName" type="text">
+         <input data-montage-id="txtPhoneNumber" type="text">
+		<input data-montage-id="txtPassword" type="password">
+         <input data-montage-id="txtConfirmPassword" type="password">
+		<button data-montage-id="button"></button>
+        </form>
+		</div>
+		</div>		
+	    </div>
+	</div>
+    </div>
+</body>
+</html>
