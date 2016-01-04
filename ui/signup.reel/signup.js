@@ -3,8 +3,8 @@
  */
  var Montage = require("montage/core/core").Montage,
      Component = require("montage/ui/component").Component,
-	 reqwest = require('reqwest'),
-	  $ = require('jquery');
+	 reqwest = require('reqwest');
+	  //$ = require('jquery');
 
 /**
  * @class Signup
