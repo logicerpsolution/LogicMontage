@@ -2,8 +2,8 @@
  * @module ui/signin.reel
  */
 var Montage = require("montage/core/core").Montage,
-    Component = require("montage/ui/component").Component;
-
+    Component = require("montage/ui/component").Component,
+	reqwest = require('reqwest');
 /**
  * @class Signin
  * @extends Component
@@ -20,16 +20,19 @@ templateDidLoad: {
         value: function(event) {
 		console.log(this);
 		var self=this.templateObjects;
-            this.templateObjects.button.itemLinkElement.addEventListener("click",function(event){
+            this.templateObjects.btnLogin.itemLinkElement.addEventListener("click",function(event){
 			if(self.txtUserName.value!="" && self.txtPassword.value!=""){
 				reqwest({
-					url: 'http://devserver.logicerp.com:82/dimitri/index.php',
-					type: 'jsonp',
-					data:{action:'signup',username:self.txtUserName.value,password:self.txtPassword.value},
+					url: 'http://devserver.logicerp.com:82/api/rest/api_new.php',
+					//type: 'jsonp',
+					data:{action:'signin',emailid:self.txtUserName.value,password:self.txtPassword.value},
 					crossOrigin: true,
 					method: 'GET',
 					success: function (resp) {
 						console.log(resp);
+					},
+					error:function(err){
+						console.log(err);
 					}
 				});
 				}

@@ -95,7 +95,9 @@ footer {
 .form-module .cta a:hover{text-decoration:underline;}
 .fLeft{float:left;}
 .fRight{float:right;}
-
+.innerDiv h6 span{font-size:12px;}
+.successText{color:#FFFF00;}
+.warningText{color:#ff0000;}
 
 /* Give a quick and non-cross-browser friendly divider */
 /*

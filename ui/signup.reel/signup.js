@@ -3,7 +3,8 @@
  */
  var Montage = require("montage/core/core").Montage,
      Component = require("montage/ui/component").Component,
-	 reqwest = require('reqwest');
+	 reqwest = require('reqwest'),
+	  $ = require('jquery');
 
 /**
  * @class Signup
@@ -42,14 +43,20 @@ templateDidLoad: {
             this.templateObjects.button.itemLinkElement.addEventListener("click",function(event){
 			if(self.txtPassword.value==self.txtConfirmPassword.value){
 				reqwest({
-					url: 'http://devserver.logicerp.com:82/dimitri/index.php',
-					type: 'jsonp',
+					url: 'http://devserver.logicerp.com:82/api/rest/api_new.php',
+					//type: 'jsonp',
 					data:{action:'signup',firstname:self.txtFirstName.value,lastname:self.txtLastName.value,emailid:self.txtEmailId.value,dob:self.txtDOB.value,companyname:self.txtCompanyName.value,phoneno:self.txtPhoneNumber.value,password:self.txtPassword.value,confirmpassword:self.txtConfirmPassword.value},
 					crossOrigin: true,
 					method: 'GET',
 					success: function (resp) {
-						console.log(resp);
+					self.txtMessage.value=resp.msg;
+					console.log(resp);
+					},
+					error:function(err)
+					{
+						console.log(err);
 					}
+					
 				});
 				}
 				else

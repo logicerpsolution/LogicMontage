@@ -3,8 +3,7 @@
 <head>
     <title></title>
     <link rel="stylesheet" type="text/css" href="signup.css">
-	<script src=""></script>
-    <script type="text/montage-serialization">
+	<script type="text/montage-serialization">
     {
         "owner": {
             "properties": {
@@ -76,6 +75,12 @@
                 "element": {"#": "txtConfirmPassword"},
                 "placeholder":"Confirm Password"
             }
+        },
+        "txtMessage": {
+            "prototype": "montage/ui/dynamic-text.reel",
+            "properties": {
+                "element": {"#": "txtMessage"}
+            }
         }
     }
     </script>
@@ -83,20 +88,23 @@
 <body>
     <div data-montage-id="owner" class="Signup">
 	<div class="outer" >
+	 
 		<div class="innerDiv">
+		<h6><span data-montage-id="txtMessage"></span></h6>
 		<div class="form-module">
+	
 		<div class="formContainer">
 		<h2>Create to your account</h2>
 		<form>
        <!--  <input type="text" placeholder="First Name"> -->
-	    <input data-montage-id="txtFirstName" type="text">
-       <input data-montage-id="txtLastName" type="text">
-        <input data-montage-id="txtEmailId" type="text">
+	    <input data-montage-id="txtFirstName" type="text" required>
+       <input data-montage-id="txtLastName" type="text" >
+        <input data-montage-id="txtEmailId" type="text" required>
         <input data-montage-id="txtDOB" type="text">
         <input data-montage-id="txtCompanyName" type="text">
          <input data-montage-id="txtPhoneNumber" type="text">
-		<input data-montage-id="txtPassword" type="password">
-         <input data-montage-id="txtConfirmPassword" type="password">
+		<input data-montage-id="txtPassword" type="password" required>
+         <input data-montage-id="txtConfirmPassword" type="password" required>
 		<button data-montage-id="button"></button>
         </form>
 		</div>
