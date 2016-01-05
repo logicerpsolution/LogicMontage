@@ -29,6 +29,7 @@ templateDidLoad: {
 					crossOrigin: true,
 					method: 'GET',
 					success: function (resp) {
+					self.txtMessage.value=resp.hasOwnProperty("msg")?resp.msg:"Hello "+resp.firstname;
 						console.log(resp);
 					},
 					error:function(err){
