@@ -12,8 +12,7 @@ exports.Content = Montage.create(Component, {
     contentDeck: {
         value: null
     },
-
-    _selectedItem: {value: null},
+	_selectedItem: {value: null},
     selectedItem: {
         get: function() {
             return this._selectedItem;

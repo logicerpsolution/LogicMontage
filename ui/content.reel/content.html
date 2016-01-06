@@ -19,13 +19,19 @@
                 "properties": {
                 }
             },
+			"page": {
+                "prototype": "ui/components/signin.reel",
+                "properties": {
+                }
+            },
             "content": {
                 "prototype": "montage/ui/substitution.reel",
                 "properties": {
                     "element": {"#": "content"},
                     "switchComponents": {
 						"signin": {"@": "signin"},
-                        "signup": {"@": "signup"}
+                        "signup": {"@": "signup"},
+						"page": {"@": "page"}
                     },
                     "delegate": {"@": "owner"}
 				},

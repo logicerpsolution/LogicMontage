@@ -18,8 +18,9 @@ var Montage = require("montage/core/core").Montage,
 exports.Signin=Montage.create(Component,{
 templateDidLoad: {
         value: function(event) {
-		console.log(this);
+		
 		var self=this.templateObjects;
+		console.log(self.owner.ownerComponent._selectedItem);
             this.templateObjects.btnLogin.itemLinkElement.addEventListener("click",function(event){
 			if(self.txtUserName.value!="" && self.txtPassword.value!=""){
 				reqwest({
@@ -29,7 +30,18 @@ templateDidLoad: {
 					crossOrigin: true,
 					method: 'GET',
 					success: function (resp) {
-					self.txtMessage.value=resp.hasOwnProperty("msg")?resp.msg:"Hello "+resp.firstname;
+					//self.txtMessage.value=resp.hasOwnProperty("msg")?resp.msg:"Hello "+resp.firstname;
+					//var _msg="";					
+					if(resp.hasOwnProperty("msg"))
+					{
+						self.txtMessage.value=_msg=resp.msg;
+					}
+					else
+					{
+						self.owner.ownerComponent._selectedItem="page";
+						window.location="#page";
+						location.reload();
+					}
 						console.log(resp);
 					},
 					error:function(err){
