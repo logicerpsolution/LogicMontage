@@ -20,6 +20,30 @@
                 "label": "Sign Up"
             }
         },
+        "twitterButton":{
+			"prototype": "montage/ui/image.reel",
+			 "properties": {
+                "element": {"#": "twitterButton"},
+				"itemLinkElement": {"#": "twitterButton"},
+                "enabled": true
+            }
+		},
+        "googleButton":{
+			"prototype": "montage/ui/image.reel",
+			 "properties": {
+                "element": {"#": "googleButton"},
+				"itemLinkElement": {"#": "googleButton"},
+                "enabled": true
+            }
+		},
+		 "fbButton":{
+			"prototype": "montage/ui/image.reel",
+			 "properties": {
+                "element": {"#": "fbButton"},
+				"itemLinkElement": {"#": "fbButton"},
+                "enabled": true
+            }
+		},
         "txtFirstName": {
             "prototype": "montage/ui/input-text.reel",
             "properties": {
@@ -92,7 +116,9 @@
 		<div class="innerDiv">
 		<h6><span data-montage-id="txtMessage"></span></h6>
 		<div class="form-module">
-	
+		<img src="images/fb.png"  data-montage-id="fbButton"/>
+		<img src="images/googleButton.png"  data-montage-id="googleButton"/>
+		<img src="images/twitter_button.png"  data-montage-id="twitterButton"/>
 		<div class="formContainer">
 		<h2>Create to your account</h2>
 		<form>

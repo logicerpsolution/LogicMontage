@@ -40,7 +40,66 @@ templateDidLoad: {
         value: function(event) {
 		console.log(this);
 		var self=this.templateObjects;
+		
+		this.templateObjects.twitterButton.itemLinkElement.addEventListener("click",function(event){
+			//Google login button clicked
+			  reqwest({
+					url: 'http://devserver.logicerp.com:82/api/rest/api_new.php',
+					//type: 'jsonp',
+					data:{action:'signupTwitter'},
+					crossOrigin: true,
+					method: 'GET',
+					success: function (resp) {
+						if(resp.status==1)
+							window.location=resp.msg;
+						else
+							console.log(resp.msg);
+					},
+					error:function(err)
+					{
+						console.log(err);
+					}
+					
+				});
+			});
+		this.templateObjects.fbButton.itemLinkElement.addEventListener("click",function(event){
+			//Google login button clicked
+			  reqwest({
+					url: 'http://devserver.logicerp.com:82/api/rest/api_new.php',
+					//type: 'jsonp',
+					data:{action:'signupFacebook'},
+					crossOrigin: true,
+					method: 'GET',
+					success: function (resp) {						
+						window.location=resp.msg;
+					},
+					error:function(err)
+					{
+						console.log(err);
+					}
+					
+				});
+			});
+		   this.templateObjects.googleButton.itemLinkElement.addEventListener("click",function(event){
+			//Google login button clicked
+			  reqwest({
+					url: 'http://devserver.logicerp.com:82/api/rest/api_new.php',
+					//type: 'jsonp',
+					data:{action:'signupGoogle'},
+					crossOrigin: true,
+					method: 'GET',
+					success: function (resp) {
+						 window.location=resp.msg;
+					},
+					error:function(err)
+					{
+						console.log(err);
+					}
+					
+				});
+			});
             this.templateObjects.button.itemLinkElement.addEventListener("click",function(event){
+				
 			if(self.txtPassword.value==self.txtConfirmPassword.value){
 				reqwest({
 					url: 'http://devserver.logicerp.com:82/api/rest/api_new.php',

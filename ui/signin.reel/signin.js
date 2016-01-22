@@ -32,7 +32,7 @@ templateDidLoad: {
 					success: function (resp) {
 					//self.txtMessage.value=resp.hasOwnProperty("msg")?resp.msg:"Hello "+resp.firstname;
 					//var _msg="";					
-					if(resp.hasOwnProperty("msg"))
+					if(resp.status=='Failed')
 					{
 						self.txtMessage.value=_msg=resp.msg;
 					}
@@ -42,7 +42,6 @@ templateDidLoad: {
 						window.location="#page";
 						location.reload();
 					}
-						console.log(resp);
 					},
 					error:function(err){
 						console.log(err);
